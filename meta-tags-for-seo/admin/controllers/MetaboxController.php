@@ -2,17 +2,14 @@
 
 namespace Pagup\MetaTags\Controllers;
 
-use  Pagup\MetaTags\Core\Option ;
-use  Pagup\MetaTags\Core\Plugin ;
-use  Pagup\MetaTags\Core\Request ;
-class MetaboxController
-{
-    public function add_metabox()
-    {
+use Pagup\MetaTags\Core\Option;
+use Pagup\MetaTags\Core\Plugin;
+use Pagup\MetaTags\Core\Request;
+class MetaboxController {
+    public function add_metabox() {
     }
-    
-    public function metabox( $post )
-    {
+
+    public function metabox( $post ) {
         $data = [
             'pmt_custom_tags' => get_post_meta( $post->ID, 'pmt_custom_tags', true ),
             'pmt_meta_tags'   => get_post_meta( $post->ID, 'pmt_meta_tags', true ),
@@ -29,10 +26,10 @@ class MetaboxController
         // wp_localize_script( 'pmt__script', 'meta', $meta);
         return Plugin::view( 'metabox', $data );
     }
-    
-    public function metadata( $postid )
-    {
+
+    public function metadata( $postid ) {
     }
 
 }
+
 $metabox = new MetaboxController();

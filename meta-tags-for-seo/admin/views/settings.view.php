@@ -17,7 +17,7 @@ if ( function_exists( 'wp_nonce_field' ) ) {
 ?>
 
                 <?php 
-echo  $progress_bar ;
+echo $progress_bar;
 ?>
 
                 <div id="meta_app">
@@ -25,7 +25,7 @@ echo  $progress_bar ;
                 <div class="pmt-segment">
 
                     <h2><?php 
-echo  __( 'About Meta Tags', "meta-tags-for-seo" ) ;
+echo __( 'About Meta Tags', "meta-tags-for-seo" );
 ?></h2>
 
                     <p v-if="hideDesc">This plugin allows to deploy illimited &amp; customized META tags (mainly META Keywords) everywhere on your website or on specific pages/posts/custom post types/product pages depending on your content (for SEO purpose). Meta Keywords are a specific type of meta tag that appear in the HTML code of a Web page and help tell search engines what the topic of the page is. <a href="#" @click.prevent="showDesc" style="font-weight: 700;">See more...</a></p>
@@ -39,7 +39,7 @@ echo  __( 'About Meta Tags', "meta-tags-for-seo" ) ;
                     <div class="pmt-alert pmt-note" style="padding: 15px 20px; font-size: 16px">
                     <span class="closebtn">&times;</span> 
                     <?php 
-echo  $get_pro . " " . __( 'Meta Tags for SEO on Woocommerce Products', "meta-tags-for-seo" ) ;
+echo $get_pro . " " . __( 'Meta Tags for SEO on Woocommerce Products', "meta-tags-for-seo" );
 ?>
                     </div>
                     <?php 
@@ -58,7 +58,7 @@ echo  $get_pro . " " . __( 'Meta Tags for SEO on Woocommerce Products', "meta-ta
                                     <button @click.prevent="duplicateMeta(index)" class="pmt-btn"><span class="dashicons dashicons-admin-page"></span></button>
                                     <span class="pmt-tooltiptext">
                                         <?php 
-echo  __( 'Duplicate', "meta-tags-for-seo" ) ;
+echo __( 'Duplicate', "meta-tags-for-seo" );
 ?>
                                     </span>
                                 </div>
@@ -66,7 +66,7 @@ echo  __( 'Duplicate', "meta-tags-for-seo" ) ;
                                     <button @click.prevent="removeMeta(index)" class="pmt-btn"><span class="dashicons dashicons-no"></span></button>
                                     <span class="pmt-tooltiptext">
                                         <?php 
-echo  __( 'Delete', "meta-tags-for-seo" ) ;
+echo __( 'Delete', "meta-tags-for-seo" );
 ?>
                                     </span>
                                 </div>
@@ -79,9 +79,9 @@ echo  __( 'Delete', "meta-tags-for-seo" ) ;
                                     <select class="pmt-input" :name="'meta_tags['+index+'][type]'" v-model="field.type">
                                         <option value="name">name</option>
                                         <option value="http-equiv" <?php 
-echo  'disabled="disabled"' ;
+echo 'disabled="disabled"';
 ?> >http-equiv <?php 
-echo  '(PRO version only)' ;
+echo '(PRO version only)';
 ?></option>
                                     </select>
                                 </div>
@@ -92,7 +92,7 @@ echo  '(PRO version only)' ;
                                         <span class="dashicons dashicons-editor-help"></span>
                                         <span class="pmt-tooltiptext">
                                             <?php 
-echo  __( 'Meta Keywords are a specific type of meta tag that help tell search engines what the topic of the page is. META Author is used to specify the name of the author of the content (The author tag is now used as a Facebook meta tag). META Copyright records information of who copyright ownership belongs to.', "meta-tags-for-seo" ) ;
+echo __( 'Meta Keywords are a specific type of meta tag that help tell search engines what the topic of the page is. META Author is used to specify the name of the author of the content (The author tag is now used as a Facebook meta tag). META Copyright records information of who copyright ownership belongs to.', "meta-tags-for-seo" );
 ?>
                                         </span>
                                     </div>
@@ -100,15 +100,15 @@ echo  __( 'Meta Keywords are a specific type of meta tag that help tell search e
                                         <option value="keywords">keywords</option>
                                         
                                         <option value="author" <?php 
-echo  'disabled="disabled"' ;
+echo 'disabled="disabled"';
 ?> >author <?php 
-echo  '(PRO version only)' ;
+echo '(PRO version only)';
 ?></option>
                                         
                                         <option value="copyright" <?php 
-echo  'disabled="disabled"' ;
+echo 'disabled="disabled"';
 ?> >copyright <?php 
-echo  '(PRO version only)' ;
+echo '(PRO version only)';
 ?></option>
                                     </select>
                                     
@@ -120,7 +120,7 @@ echo  '(PRO version only)' ;
                                         <span class="dashicons dashicons-editor-help"></span>
                                         <span class="pmt-tooltiptext">
                                             <?php 
-echo  __( 'Add any word or group of words related to the page/post/... or the post type selected - For example, if you are a photographer, a consultant, a web designer, ... make sure to mention it here', "meta-tags-for-seo" ) ;
+echo __( 'Add any word or group of words related to the page/post/... or the post type selected - For example, if you are a photographer, a consultant, a web designer, ... make sure to mention it here', "meta-tags-for-seo" );
 ?>
                                         </span>
                                     </div>
@@ -138,29 +138,29 @@ echo  __( 'Add any word or group of words related to the page/post/... or the po
                                         <span class="dashicons dashicons-editor-help"></span>
                                         <span class="pmt-tooltiptext">
                                             <?php 
-echo  __( 'Select where to deploy these META keywords. (Note: In free version, Woocommerce Products will not work with "Everywhere" option)', "meta-tags-for-seo" ) ;
+echo __( 'Select where to deploy these META keywords. (Note: In free version, Woocommerce Products will not work with "Everywhere" option)', "meta-tags-for-seo" );
 ?>
                                         </span>
                                     </div>
                                     <select class="pmt-input" :name="'meta_tags['+index+'][post_type]'" v-model="field.post_type">
                                     <option value="everywhere">Everywhere <?php 
-echo  "(except WooCommerce products)" ;
+echo "(except WooCommerce products)";
 ?></option>   
                                     <?php 
 foreach ( $post_types as $post_type ) {
     $labels = get_post_type_labels( $post_type );
     ?>
                                     <option value="<?php 
-    echo  esc_attr( $post_type->name ) ;
+    echo esc_attr( $post_type->name );
     ?>"
                                     <?php 
     if ( !pmt__fs()->can_use_premium_code__premium_only() && $post_type->name == 'product' ) {
-        echo  'disabled' ;
+        echo 'disabled';
     }
     ?>
                                     >
                                         <?php 
-    echo  esc_html( $labels->name ) . (( !pmt__fs()->can_use_premium_code__premium_only() && $post_type->name == 'product' ? " (PRO version only)" : '' )) ;
+    echo esc_html( $labels->name ) . (( !pmt__fs()->can_use_premium_code__premium_only() && $post_type->name == 'product' ? " (PRO version only)" : '' ));
     ?>
                                     </option>
                                     <?php 
@@ -177,7 +177,7 @@ foreach ( $post_types as $post_type ) {
                                         <span class="dashicons dashicons-editor-help"></span>
                                         <span class="pmt-tooltiptext">
                                             <?php 
-echo  __( 'Select (or not) the kind of Focus Keyword to be used with your META Keywords (Yoast or Rank Math). META Tags for SEO will search these Focus Keywords and deploy them strategically as configured.', "meta-tags-for-seo" ) ;
+echo __( 'Select (or not) the kind of Focus Keyword to be used with your META Keywords (Yoast or Rank Math). META Tags for SEO will search these Focus Keywords and deploy them strategically as configured.', "meta-tags-for-seo" );
 ?>
                                         </span>
                                     </div>
@@ -203,7 +203,7 @@ echo  __( 'Select (or not) the kind of Focus Keyword to be used with your META K
                                         <span class="dashicons dashicons-editor-help"></span>
                                         <span class="pmt-tooltiptext">
                                             <?php 
-echo  __( 'Select (or not) to deploy post titles as META Keywords', "meta-tags-for-seo" ) ;
+echo __( 'Select (or not) to deploy post titles as META Keywords', "meta-tags-for-seo" );
 ?>
                                         </span>
                                     </div>
@@ -221,7 +221,7 @@ echo  __( 'Select (or not) to deploy post titles as META Keywords', "meta-tags-f
                                         <span class="dashicons dashicons-editor-help"></span>
                                         <span class="pmt-tooltiptext">
                                             <?php 
-echo  __( 'Select (or not) to deploy your site title as META Keywords', "meta-tags-for-seo" ) ;
+echo __( 'Select (or not) to deploy your site title as META Keywords', "meta-tags-for-seo" );
 ?>
                                         </span>
                                     </div>
@@ -239,13 +239,13 @@ echo  __( 'Select (or not) to deploy your site title as META Keywords', "meta-ta
                                         <span class="dashicons dashicons-editor-help"></span>
                                         <span class="pmt-tooltiptext">
                                             <?php 
-echo  __( 'Select (or not) to deploy product SKU as META Keywords (it will only work on single products when SKU is set)', "meta-tags-for-seo" ) ;
+echo __( 'Select (or not) to deploy product SKU as META Keywords (it will only work on single products when SKU is set)', "meta-tags-for-seo" );
 ?>
                                         </span>
                                     </div>
                                         <div>
                                             <label class="pmt-toggle" <?php 
-echo  ( !pmt__fs()->can_use_premium_code__premium_only() ? '@click="pro_only"' : '' ) ;
+echo ( !pmt__fs()->can_use_premium_code__premium_only() ? '@click="pro_only"' : '' );
 ?>>
                                             <?php 
 ?>
@@ -264,13 +264,13 @@ echo  ( !pmt__fs()->can_use_premium_code__premium_only() ? '@click="pro_only"' :
                                         <span class="dashicons dashicons-editor-help"></span>
                                         <span class="pmt-tooltiptext">
                                             <?php 
-echo  __( 'Select (or not) to deploy product categories as META Keywords (it will only work on single products when Categories are set)', "meta-tags-for-seo" ) ;
+echo __( 'Select (or not) to deploy product categories as META Keywords (it will only work on single products when Categories are set)', "meta-tags-for-seo" );
 ?>
                                         </span>
                                     </div>
                                         <div>
                                             <label class="pmt-toggle" <?php 
-echo  ( !pmt__fs()->can_use_premium_code__premium_only() ? '@click="pro_only"' : '' ) ;
+echo ( !pmt__fs()->can_use_premium_code__premium_only() ? '@click="pro_only"' : '' );
 ?>>
                                             <?php 
 ?>
@@ -288,13 +288,13 @@ echo  ( !pmt__fs()->can_use_premium_code__premium_only() ? '@click="pro_only"' :
                                         <span class="dashicons dashicons-editor-help"></span>
                                         <span class="pmt-tooltiptext">
                                             <?php 
-echo  __( 'Select (or not) to deploy product tags as META Keywords (it will only work on single products when tags are set)', "meta-tags-for-seo" ) ;
+echo __( 'Select (or not) to deploy product tags as META Keywords (it will only work on single products when tags are set)', "meta-tags-for-seo" );
 ?>
                                         </span>
                                     </div>
                                         <div>
                                             <label class="pmt-toggle" <?php 
-echo  ( !pmt__fs()->can_use_premium_code__premium_only() ? '@click="pro_only"' : '' ) ;
+echo ( !pmt__fs()->can_use_premium_code__premium_only() ? '@click="pro_only"' : '' );
 ?>>
                                             <?php 
 ?>
@@ -309,7 +309,7 @@ echo  ( !pmt__fs()->can_use_premium_code__premium_only() ? '@click="pro_only"' :
                             </div>
                         
                             <div class="pmt-tag" v-if="field.type"><strong>Preview your META Tag:</strong> &lt;meta {{ field.type }}="{{ field.value }}" content="{{ field.content }}<span style='color: red'>{{ field.focus_keyword ? ', focus keyword' : '' }}{{ field.post_title ? ', post title' : '' }}{{ field.product_sku ? ', product sku' : ''}}{{ field.product_cats ? ', product categories' : ''}}{{ field.product_tags ? ', product tags' : ''}}</span>{{ field.site_title ? ', <?php 
-echo  $site_title ;
+echo $site_title;
 ?>' : '' }}"&gt;</div>
                             
                         </div>
@@ -323,13 +323,13 @@ echo  $site_title ;
                             <span class="dashicons dashicons-editor-help"></span>
                             <span class="pmt-tooltiptext">
                                 <?php 
-echo  __( 'If you need to add other tags to your website, such as Facebook/Pinterest/Google/Norton verification tags (to verify your site ownership), please use this section.', "meta-tags-for-seo" ) ;
+echo __( 'If you need to add other tags to your website, such as Facebook/Pinterest/Google/Norton verification tags (to verify your site ownership), please use this section.', "meta-tags-for-seo" );
 ?>
                             </span>
                         </div>
                         <textarea id="pmt_custom_tags_area" name="pmt_custom_tags_area" class="pmt-textarea" v-model="custom_tags_area"
                         <?php 
-echo  "disabled" ;
+echo "disabled";
 ?>
                         placeholder='<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="google-site-verification" content="54986531549552sadas62sd8as1das9da2sas3" />
@@ -341,7 +341,7 @@ echo  "disabled" ;
                         <div class="pmt-alert pmt-note" style="padding: 15px 20px; font-size: 16px">
                             <span class="closebtn">&times;</span> 
                             <?php 
-echo  $get_pro . " " . __( 'Custom Meta Tags text area.', "meta-tags-for-seo" ) ;
+echo $get_pro . " " . __( 'Custom Meta Tags text area.', "meta-tags-for-seo" );
 ?>
                         </div>
                         <?php 
@@ -354,12 +354,12 @@ echo  $get_pro . " " . __( 'Custom Meta Tags text area.', "meta-tags-for-seo" ) 
                 <div class="pmt-alert pmt-note" style="padding: 15px 20px; font-size: 16px; margin-top: 20px;">
                     <span class="closebtn">&times;</span> 
                     <?php 
-echo  $get_pro . " " . sprintf( wp_kses( __( 'disable Meta Tags locally and custom Meta tags with a <a href="%s" target="_blank">META BOX feature</a>', "meta-tags-for-seo" ), array(
+echo $get_pro . " " . sprintf( wp_kses( __( 'disable Meta Tags locally and custom Meta tags with a <a href="%s" target="_blank">META BOX feature</a>', "meta-tags-for-seo" ), array(
     'a' => array(
-    'href'   => array(),
-    'target' => array(),
-),
-) ), esc_url( PMT_PLUGIN_DIR . '/admin/assets/metabox.png' ) ) ;
+        'href'   => array(),
+        'target' => array(),
+    ),
+) ), esc_url( PMT_PLUGIN_DIR . '/admin/assets/metabox.png' ) );
 ?>
                 </div>
                 <?php 
@@ -373,7 +373,7 @@ echo  $get_pro . " " . sprintf( wp_kses( __( 'disable Meta Tags locally and cust
                             <label class="pmt-label" for="remove_settings">
                                 <strong>
                                     <?php 
-echo  __( 'Remove Settings', "meta-tags-for-seo" ) ;
+echo __( 'Remove Settings', "meta-tags-for-seo" );
 ?>
                                 </strong>
                             </label>
@@ -383,7 +383,7 @@ echo  __( 'Remove Settings', "meta-tags-for-seo" ) ;
                             <label class="pmt-toggle"><input id="remove_settings" type="checkbox" name="remove_settings"
                                     value="remove_settings" <?php 
 if ( $options::check( 'remove_settings' ) ) {
-    echo  'checked' ;
+    echo 'checked';
 }
 ?> />
                                 <span class='pmt-toggle-slider pmt-toggle-round'></span></label>
@@ -392,7 +392,7 @@ if ( $options::check( 'remove_settings' ) ) {
                         <div class="col-xs-8 field">
                             <input type="submit" name="update" class="pmt-submit"
                                 value="<?php 
-echo  esc_html__( 'Save Changes', "meta-tags-for-seo" ) ;
+echo esc_html__( 'Save Changes', "meta-tags-for-seo" );
 ?>" />
                         </div>
 
@@ -403,7 +403,7 @@ echo  esc_html__( 'Save Changes', "meta-tags-for-seo" ) ;
                 <div class="pmt-segment">
 
                     <p><?php 
-echo  __( "<strong>Note:</strong> Make sure to clear your cache after saving changes.", "meta-tags-for-seo" ) ;
+echo __( "<strong>Note:</strong> Make sure to clear your cache after saving changes.", "meta-tags-for-seo" );
 ?>
                     </p>
 
