@@ -4,7 +4,7 @@
 * Plugin Name: Meta Tags for SEO
 * Description: META TAGS for SEO allows you to display custom META Keywords strategically (based on Yoast / Rank Math in some cases) to boost your ranking on search engines.
 * Author: Pagup
-* Version: 1.1.4
+* Version: 1.1.5
 * Author URI: https://pagup.com/
 * Text Domain: meta-tags-for-seo
 * Domain Path: /languages/

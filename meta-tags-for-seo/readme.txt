@@ -3,8 +3,8 @@ Contributors: the-rock, pagup, freemius
 Tags: Tag, Tags, Meta, SEO, Keyword
 Requires at least: 4.1
 Requires PHP: 5.6
-Tested up to: 6.7
-Stable tag: 1.1.4
+Tested up to: 6.8
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -112,3 +112,6 @@ As a general rule, no more than ten meta keywords should be recorded.
 
 = 1.1.4 =
 * 🐛 FIX: Security fix
+
+= 1.1.5 =
+* 🐛 FIX: PHP warning for post ID missing.

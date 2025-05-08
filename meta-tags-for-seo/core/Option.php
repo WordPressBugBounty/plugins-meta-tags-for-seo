@@ -29,6 +29,9 @@ class Option
     public static function post_meta($key)
     {
         global $post;
+        if (!isset($post->ID)) {
+            return false;
+        }
         return get_post_meta($post->ID, $key, true);
     }
 
